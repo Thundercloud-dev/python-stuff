@@ -18,8 +18,13 @@ class User(db.Model):
         return f'<User {self.username}>'
 
 class Group(db.Model):
+    group = db.Column(db.String(100), unique=True, nullable=False)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    
+    rank = db.Column(db.String(100), unique=False, nullable=False)
+    coins = db.Column(db.Integer(10000), unique=False, nullable=False)
+    xp = db.Column(db.Integer(500), unique=False, nullable=False)
+
+
 
 if __name__ == '__main__':
     with app.app_context():

@@ -24,6 +24,8 @@ class Group(db.Model):
     coins = db.Column(db.Integer(10000), unique=False, nullable=False)
     xp = db.Column(db.Integer(500), unique=False, nullable=False)
 
+    def __repr__(self):
+        return f'<User {self.group}>'
 
 
 if __name__ == '__main__':
